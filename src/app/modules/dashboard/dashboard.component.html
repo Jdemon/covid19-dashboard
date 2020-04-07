@@ -1,0 +1,83 @@
+<h1>
+    THAILAND COVID19 INFECTION
+</h1>
+<h4>
+    Latest update : {{ updateDate }}
+</h4>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div  fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
+    <mat-card *ngFor="let item of cards; let i = index" fxFlex="25" >
+        <app-widget-card [label]="item.title" [total]="item.total" [graph]="item.graph"
+        [new]="item.newAdd" [data]="item.data" [percentage]="item.percentage"></app-widget-card>
+    </mat-card>
+</div>
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div>
+    <app-widget-area *ngIf="bigChart" [data]="bigChart"></app-widget-area>
+</div>
+<br>
+
+<mat-divider></mat-divider>
+
+<h1>
+    GENERAL
+</h1>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row"  fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div *ngIf="pieChart" fxFlex="50">
+        <app-widget-pie [data]="pieChart.nation" [name]="'Nationality'" [latest]="pieChart.latestDate"></app-widget-pie>
+    </div>
+    <div *ngIf="pieChart" fxFlex="50">
+        <app-widget-pie [data]="pieChart.gender" [name]="'Gender'" [latest]="pieChart.latestDate"></app-widget-pie>
+    </div>
+    
+</div>
+
+
+<br>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div fxLayout="row"  fxLayoutAlign="space-between center" fxLayoutGap="50px">
+    <div *ngIf="pieChart" fxFlex="100">
+        <app-widget-pie [data]="pieChart.province" [name]="'Province'" [latest]="pieChart.latestDate"></app-widget-pie>
+    </div>
+    
+</div>
+
+<br>
+
+<mat-divider></mat-divider>
+
+<h1>
+    THAILAND COVID19 MAP
+</h1>
+
+<mat-divider></mat-divider>
+
+<br>
+
+<div> 
+    <object type="text/html" data="https://covid19.th-stat.com/th/share/map" width="100%" height="500px">
+    </object>
+ </div>
+
+<br>
+<br>
+<br>
