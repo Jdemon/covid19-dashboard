@@ -38,7 +38,7 @@ export class AreaComponent implements OnInit {
       plotOptions: {
         area: {
             marker: {
-                enabled: false,
+                enabled: true,
                 symbol: 'circle',
                 radius: 2,
                 states: {
